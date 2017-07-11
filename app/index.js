@@ -6,7 +6,6 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View
@@ -43,5 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('NoteTaker', () => NoteTaker);
 export default NoteTaker;
