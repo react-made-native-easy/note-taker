@@ -12,10 +12,15 @@ import {
   View
 } from 'react-native';
 
+import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
+import icoMoonConfig from './assets/selection.json';
+const Icon = createIconSetFromIcoMoon(icoMoonConfig);
+
 class NoteTaker extends Component {
   render () {
     return (
       <View style={styles.container}>
+        <Icon name='branch-locator' />
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
