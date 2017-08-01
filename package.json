@@ -2,6 +2,7 @@
 		"name": "NoteTaker",
 		"version": "0.0.1",
 		"private": true,
+		"rnpm": { "assets": [ "resources/fonts" ] },
 		"scripts": {
 				"start": "node node_modules/react-native/local-cli/cli.js start",
 				"ios": "react-native run-ios",
