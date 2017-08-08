@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import theme from '../../styles/theme.style';
+import {headingText, textInput} from '../../styles/common.style';
 
 export default StyleSheet.create({
   container: {
@@ -8,27 +9,18 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   titleHeading: {
-    fontSize: theme.FONT_SIZE_MEDIUM,
-    alignSelf: 'flex-start',
-    padding: 10,
-    fontWeight: theme.FONT_WEIGHT_BOLD,
+    ...headingText
   },
   titleTextInput: {
-    padding: theme.TEXT_INPUT_PADDING,
-    backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
-    alignSelf: 'stretch'
+    ...textInput
   },
   textAreaTitle: {
-    fontSize: theme.FONT_SIZE_MEDIUM,
-    alignSelf: 'flex-start',
-    padding: 10,
+    ...headingText,
     fontWeight: theme.FONT_WEIGHT_LIGHT,
     fontStyle: 'italic'
   },
   textArea: {
-    padding: theme.TEXT_INPUT_PADDING,
-    backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
-    alignSelf: 'stretch',
+    ...textInput,
     flex: 1
   }
 });
