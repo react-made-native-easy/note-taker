@@ -7,8 +7,8 @@ class Home extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Text> Please enter your note here</Text>
-        <TextArea />
+        <Text style={styles.textAreaTitle}> Please enter your note here</Text>
+        <TextArea style={styles.textArea}/>
       </View>
     );
   }
