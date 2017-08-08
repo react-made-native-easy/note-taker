@@ -1,10 +1,9 @@
 import {StyleSheet} from 'react-native';
+import theme from '../../styles/theme.style';
 
 export default StyleSheet.create({
   textArea: {
-    width: 200,
-    height: 100,
-    borderColor: 'gray',
-    borderWidth: 1
+    fontSize: theme.FONT_SIZE_MEDIUM,
+    fontWeight: theme.FONT_WEIGHT_LIGHT
   }
 });
