@@ -7,17 +7,28 @@ export default StyleSheet.create({
     paddingVertical: theme.CONTAINER_PADDING,
     alignItems: 'center'
   },
+  titleHeading: {
+    fontSize: theme.FONT_SIZE_MEDIUM,
+    alignSelf: 'flex-start',
+    padding: 10,
+    fontWeight: theme.FONT_WEIGHT_BOLD,
+  },
+  titleTextInput: {
+    padding: theme.TEXT_INPUT_PADDING,
+    backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
+    alignSelf: 'stretch'
+  },
   textAreaTitle: {
     fontSize: theme.FONT_SIZE_MEDIUM,
-    fontWeight: theme.FONT_WEIGHT_BOLD,
     alignSelf: 'flex-start',
-    padding: 10
+    padding: 10,
+    fontWeight: theme.FONT_WEIGHT_LIGHT,
+    fontStyle: 'italic'
   },
   textArea: {
-    flex: 1,
-    padding: theme.CONTAINER_PADDING,
+    padding: theme.TEXT_INPUT_PADDING,
+    backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
     alignSelf: 'stretch',
-    overflow: 'scroll',
-    backgroundColor: theme.BACKGROUND_COLOR_LIGHT
+    flex: 1
   }
 });
