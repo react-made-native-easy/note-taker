@@ -1,15 +1,17 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 import React, {Component} from 'react';
-import Home from './components/Home/Home.component';
+import {initStore} from './redux/store';
+import {Provider} from 'react-redux';
+
+import App from './App.container';
+
+const store = initStore();
 
 class NoteTaker extends Component {
   render () {
     return (
-      <Home />
+      <Provider store={store}>
+        <App />
+      </Provider>
     );
   }
 }
