@@ -4,10 +4,9 @@ import styles from './Home.component.style';
 import TextArea from '../TextArea/TextArea.component';
 
 // Icon Usage
-// import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
-// import icoMoonConfig from '../../assets/selection.json';
-// const Icon = createIconSetFromIcoMoon(icoMoonConfig);
-// <Icon name='branch-locator' />
+import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
+import icoMoonConfig from '../../assets/selection.json';
+const Icon = createIconSetFromIcoMoon(icoMoonConfig);
 
 class Home extends Component {
   state = {
@@ -21,7 +20,7 @@ class Home extends Component {
         <Text style={styles.titleHeading}> Note Title</Text>
         <TextInput style={styles.titleTextInput}
             onChangeText={this.setTitle} value={this.state.title} />
-        <Text style={styles.textAreaTitle}> Please type your note below </Text>
+        <Text style={styles.textAreaTitle}> Please type your note below  <Icon name='pay' size={15}/></Text>
         <TextArea style={styles.textArea}/>
       </View>
     );
