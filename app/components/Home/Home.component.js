@@ -19,8 +19,8 @@ class Home extends Component {
 
         <Text style={styles.titleHeading}> Note Title</Text>
         <TextInput style={styles.titleTextInput}
-            onChangeText={this.setTitle} value={this.state.title} />
-        <Text style={styles.textAreaTitle}> Please type your note below  <Icon name='pay' size={15}/></Text>
+          onChangeText={this.setTitle} value={this.state.title} />
+        <Text style={styles.textAreaTitle}> Please type your note below  <Icon name='notepad' size={15}/></Text>
         <TextArea style={styles.textArea}/>
       </View>
     );
