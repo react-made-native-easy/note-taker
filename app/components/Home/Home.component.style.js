@@ -11,6 +11,9 @@ export default StyleSheet.create({
   titleHeading: {
     ...headingText
   },
+  aboutUs: {
+    marginTop: theme.CONTAINER_PADDING
+  },
   titleTextInput: {
     ...textInput
   },
