@@ -1,7 +1,7 @@
 import {createStore, compose, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise';
-import rootReducer from './reducers/root.reducer';
+import rootReducer from './reducers';
 
 const enhancerList = [];
 const devToolsExtension = window && window.devToolsExtension; // RN Debugger has devToolsExtension in the global scope

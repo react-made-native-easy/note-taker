@@ -1,17 +1,23 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Home from '../components/Home/Home.component';
+import {connect} from 'react-redux';
+import {NavigationActions} from 'react-navigation';
 
 class HomePage extends Component {
-  onAboutPress = () => {
-    this.props.navigation.navigate('about');
-  }
   render () {
-    return <Home onAboutPress={this.onAboutPress}/>;
+    return <Home onAboutPress={this.props.onAboutPress}/>;
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  onAboutPress: () => {
+    dispatch(NavigationActions.navigate({routeName: 'about'}));
+  }
+});
+
 HomePage.propTypes = {
-  navigation: PropTypes.object
+  onAboutPress: PropTypes.func
 };
-export default HomePage;
+
+export default connect(null, mapDispatchToProps)(HomePage);
