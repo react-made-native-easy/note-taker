@@ -14,7 +14,7 @@
 					"test": "jest --verbose --coverage",
 					"test:update": "jest --verbose --coverage --updateSnapshot",
 					"test:watch": "jest --verbose --watch",
-				"coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html"
+					"coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html"
 			},
 		"dependencies": {
 					"react": "16.0.0-alpha.12",
