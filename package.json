@@ -21,9 +21,8 @@
 				"react-native": "0.46.1",
 				"react-redux": "^5.0.6",
 				"redux": "^3.7.2",
-				"redux-promise": "^0.5.3",
 				"react-native-vector-icons": "^4.2.0",
-				"redux-thunk": "^2.2.0"
+				"redux-actions": "^2.2.1"
 		},
 		"devDependencies": {
 				"babel-eslint": "^7.2.3",
