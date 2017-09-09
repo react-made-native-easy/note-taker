@@ -45,8 +45,6 @@ const Router = StackNavigator({
   about: {
     screen: AboutRoutes
   }
-}, {
-  mode: 'card'
 });
 
 export default Router;

@@ -46,11 +46,15 @@ Home.propTypes = {
   text: PropTypes.string
 };
 
+Home.defaultProps = {
+  onAboutPress: noop
+};
 Home.propTypes = {
   setTitle: PropTypes.func,
   setText: PropTypes.func,
   title: PropTypes.string,
-  text: PropTypes.string
+  text: PropTypes.string,
+  onAboutPress: PropTypes.func
 };
 
 export default Home;
