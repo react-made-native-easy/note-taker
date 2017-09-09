@@ -6,6 +6,9 @@ import Home from '../components/Home/Home.component';
 import {NavigationActions} from 'react-navigation';
 
 class HomePage extends Component {
+  onAboutPress = () => {
+    this.props.navigation.navigate('about');
+  }
   render () {
     const {setTitle, setText, title, text} = this.props;
     return (
