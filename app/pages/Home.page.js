@@ -12,7 +12,7 @@ class HomePage extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   onAboutPress: () => {
-    dispatch(NavigationActions.navigate({routeName: 'about'}));
+    dispatch(NavigationActions.navigate({routeName: 'about', params: {navigatingFrom: 'Home'}}));
   }
 });
 
