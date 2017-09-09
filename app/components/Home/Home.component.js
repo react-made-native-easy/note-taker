@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {View, Text, TextInput} from 'react-native';
+import PropTypes from 'prop-types';
 import styles from './Home.component.style';
 import TextArea from '../TextArea/TextArea.component';
-import PropTypes from 'prop-types';
+import Touchable from 'react-native-platform-touchable';
+import noop from 'lodash/noop';
 
 // Icon Usage
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
@@ -26,10 +28,23 @@ class Home extends Component {
             <Text style={styles.characterCount}>{text.length} characters</Text>
           </View>
         </View>
+        <Touchable style={styles.aboutUsWrapper} onPress={this.props.onAboutPress}>
+          <Text style={styles.aboutUs}>About Us</Text>
+        </Touchable>
       </View>
     );
   }
 }
+Home.defaultProps = {
+  onAboutPress: noop
+};
+Home.propTypes = {
+  setTitle: PropTypes.func,
+  onAboutPress: PropTypes.func,
+  setText: PropTypes.func,
+  title: PropTypes.string,
+  text: PropTypes.string
+};
 
 Home.propTypes = {
   setTitle: PropTypes.func,

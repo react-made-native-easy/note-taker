@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import Home from './pages/Home.page';
+import Router from './routes';
 import {connect} from 'react-redux';
 
 class App extends Component {
   render () {
     return (
-      <Home />
+      <Router />
     );
   }
 }

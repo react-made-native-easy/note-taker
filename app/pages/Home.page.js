@@ -5,10 +5,13 @@ import {setTitle, setText} from '../redux/actions/index.actions';
 import Home from '../components/Home/Home.component';
 
 class HomePage extends Component {
+  onAboutPress = () => {
+    this.props.navigation.navigate('about');
+  }
   render () {
     const {setTitle, setText, title, text} = this.props;
     return (
-      <Home setTitle={setTitle} setText={setText} title={title} text={text} />
+      <Home setTitle={setTitle} onAboutPress={this.onAboutPress} setText={setText} title={title} text={text} />
     );
   }
  }
@@ -17,7 +20,8 @@ HomePage.propTypes = {
   setTitle: PropTypes.func,
   setText: PropTypes.func,
   title: PropTypes.string,
-  text: PropTypes.string
+  text: PropTypes.string,
+  navigation: PropTypes.object
 };
 
 const mapStateToProps = (state) => ({
