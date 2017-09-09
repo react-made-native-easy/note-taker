@@ -1,23 +1,23 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import styles from './About.page.styles.js';
+import styles from './AboutDevs.styles.js';
 import result from 'lodash/result';
 
-class AboutPage extends Component {
+class AboutDevs extends Component {
   render () {
     const navigatingFrom = result(this.props, 'navigation.state.params.navigatingFrom', '');
     return (
       <View style={styles.container}>
-        <Text>About View </Text>
+        <Text>About the Creators </Text>
         {navigatingFrom ? <Text>Navigating from: {navigatingFrom} </Text> : null}
       </View>
     );
   }
 }
 
-AboutPage.defaultProps = {
+AboutDevs.defaultProps = {
 };
-AboutPage.propTypes = {
+AboutDevs.propTypes = {
 };
 
-export default AboutPage;
+export default AboutDevs;
