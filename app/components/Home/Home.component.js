@@ -4,15 +4,21 @@ import styles from './Home.component.style';
 import TextArea from '../TextArea/TextArea.component';
 import PropTypes from 'prop-types';
 
+// Icon Usage
+import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
+import icoMoonConfig from '../../assets/selection.json';
+const Icon = createIconSetFromIcoMoon(icoMoonConfig);
+
 class Home extends Component {
   render () {
     const {setTitle, title, text, setText} = this.props;
     return (
       <View style={styles.container}>
+
         <Text style={styles.titleHeading}> Note Title</Text>
         <TextInput style={styles.titleTextInput}
             onChangeText={setTitle} value={title} />
-        <Text style={styles.textAreaTitle}> Please type your note below </Text>
+        <Text style={styles.textAreaTitle}> Please type your note below  <Icon name='notepad' size={15}/></Text>
         <TextArea text={text} onTextChange={setText} style={styles.textArea}/>
         <View style={styles.bottomBar}>
           <View style={styles.bottomBarWrapper}>
