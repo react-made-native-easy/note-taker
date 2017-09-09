@@ -2,6 +2,7 @@ import {StackNavigator, TabNavigator} from 'react-navigation';
 import HomePage from '../pages/Home.page';
 import AboutApp from '../components/About/AboutApp.component';
 import AboutDevs from '../components/About/AboutDevs.component';
+import theme from '../styles/theme.style.js';
 
 const AboutRoutes = TabNavigator({
   aboutApp: {
@@ -19,10 +20,20 @@ const AboutRoutes = TabNavigator({
 }, {
   tabBarOptions: {
     upperCaseLabel: false,
-    showIcon: false
+    showIcon: false,
+    style: {
+      backgroundColor: 'white'
+    },
+    activeTintColor: theme.ACTIVE_TAB_COLOR,
+    inactiveTintColor: theme.INACTIVE_TAB_COLOR,
+    labelStyle: {
+      fontSize: 14
+    }
   },
   swipeEnabled: true,
-  animationEnabled: true
+  animationEnabled: true,
+  tabBarPosition: 'bottom',
+
 });
 
 const Router = StackNavigator({
