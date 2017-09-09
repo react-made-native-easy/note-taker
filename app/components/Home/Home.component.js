@@ -16,6 +16,7 @@ class Home extends Component {
     const {setTitle, title, text, setText} = this.props;
     return (
       <View style={styles.container}>
+
         <Text style={styles.titleHeading}> Note Title</Text>
         <TextInput style={styles.titleTextInput}
             onChangeText={setTitle} value={title} />
@@ -40,6 +41,13 @@ Home.defaultProps = {
 Home.propTypes = {
   setTitle: PropTypes.func,
   onAboutPress: PropTypes.func,
+  setText: PropTypes.func,
+  title: PropTypes.string,
+  text: PropTypes.string
+};
+
+Home.propTypes = {
+  setTitle: PropTypes.func,
   setText: PropTypes.func,
   title: PropTypes.string,
   text: PropTypes.string
