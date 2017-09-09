@@ -1,5 +1,6 @@
 import 'react-native';
 import React from 'react';
+jest.mock('../app/routes', () => '');
 import Index from '../index.android.js';
 
 // Note: test renderer must be required after react-native.
