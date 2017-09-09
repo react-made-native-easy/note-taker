@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux';
 import test from './test.reducer';
+import content from './content.reducer';
 import Router from '../../routes';
 
 const nav = (state, action) => (
@@ -8,5 +9,6 @@ const nav = (state, action) => (
 
 export default combineReducers({
   test,
+  content,
   nav
 });
