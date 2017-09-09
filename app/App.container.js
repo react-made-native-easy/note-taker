@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 class App extends Component {
   render () {
-    console.log(this.props.state);
+    console.log(this.props.state); // eslint-disable-line
     return (
       <Home />
     );
