@@ -35,19 +35,13 @@ class Home extends Component {
     );
   }
 }
+
 Home.defaultProps = {
   onAboutPress: noop
 };
 Home.propTypes = {
   setTitle: PropTypes.func,
   onAboutPress: PropTypes.func,
-  setText: PropTypes.func,
-  title: PropTypes.string,
-  text: PropTypes.string
-};
-
-Home.propTypes = {
-  setTitle: PropTypes.func,
   setText: PropTypes.func,
   title: PropTypes.string,
   text: PropTypes.string
