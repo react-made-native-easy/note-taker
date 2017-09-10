@@ -1,12 +1,13 @@
 import {StackNavigator} from 'react-navigation';
 import HomePage from '../pages/Home.page';
 import AboutRoutes from './about.routes.js';
+import translate from '../utils/language.utils';
 
 const Router = StackNavigator({
   home: {
     screen: HomePage,
     navigationOptions: {
-      title: 'Start taking notes',
+      title: translate('HOME_startTakingNotes'),
     }
   },
   about: {
