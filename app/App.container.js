@@ -6,20 +6,22 @@ import {addNavigationHelpers} from 'react-navigation';
 
 class App extends Component {
   render () {
-    const {dispatch, nav} = this.props;
+    const {dispatch, nav, userPreferences} = this.props;
     return (
-      <Router navigation={addNavigationHelpers({dispatch, state: nav})}/>
+      <Router screenProps={userPreferences} navigation={addNavigationHelpers({dispatch, state: nav})}/>
     );
   }
 }
 
 App.propTypes = {
   dispatch: Proptypes.func,
-  nav: Proptypes.object
+  nav: Proptypes.object,
+  userPreferences: Proptypes.object
 };
 
-const mapStateToProps = ({nav}) => ({
-  nav
+const mapStateToProps = ({nav, userPreferences}) => ({
+  nav,
+  userPreferences
 });
 
 const mapDispatchToProps = (dispatch) => ({
