@@ -10,7 +10,24 @@ export default StyleSheet.create({
     justifyContent: 'space-between'
   },
   titleHeading: {
-    ...headingText
+    ...headingText,
+  },
+  changeLanguageText: {
+    ...headingText,
+    alignSelf: 'center',
+    padding: 0,
+  },
+  changeLanguage: {
+    elevation: 2,
+    position: 'absolute',
+    backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
+    padding: 10,
+    borderRadius: 5,
+    top: 15,
+    width: 40,
+    right: 10,
+    borderWidth: 1,
+    borderColor: theme.BORDER_COLOR_LIGHT
   },
   titleTextInput: {
     ...textInput
