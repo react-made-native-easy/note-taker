@@ -39,7 +39,10 @@ export default StyleSheet.create({
   },
   textArea: {
     ...textInput,
-    flex: 1
+    flex: 1,
+    textAlignVertical: 'top',
+    fontSize: theme.FONT_SIZE_MEDIUM,
+    fontWeight: theme.FONT_WEIGHT_LIGHT
   },
   bottomBar: {
     flexDirection: 'row',
