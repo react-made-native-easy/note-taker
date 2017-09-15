@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {toggleLanguage} from '../redux/thunks/index.thunks';
 import {setTitle, setText, addNote} from '../redux/actions/index.actions';
 import Home from '../components/Home/Home.component';
+import offlineStorage from '../utils/offline.utils.js';
 import {NavigationActions} from 'react-navigation';
 
 class HomePage extends Component {
@@ -42,6 +43,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(addNote(note));
     dispatch(setTitle(''));
     dispatch(setText(''));
+    offlineStorage.addNote(note);
   },
   toggleLanguage: () => dispatch(toggleLanguage()),
   onAboutPress: () => dispatch(NavigationActions.navigate({routeName: 'about', params: {navigatingFrom: 'Home'}}))
