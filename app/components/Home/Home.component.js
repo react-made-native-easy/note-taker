@@ -7,7 +7,9 @@ import PropTypes from 'prop-types';
 class Home extends Component {
   addNote = () => {
     const {saveNote, title, text} = this.props;
-    saveNote({title, text});
+    if (title && text) {
+      saveNote({title, text});
+    }
   }
   render () {
     const {setTitle, title, text, setText, notes} = this.props;
