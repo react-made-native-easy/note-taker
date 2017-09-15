@@ -22,7 +22,10 @@ export default StyleSheet.create({
   },
   textArea: {
     ...textInput,
-    flex: 1
+    flex: 1,
+    textAlignVertical: 'top',
+    fontSize: theme.FONT_SIZE_MEDIUM,
+    fontWeight: theme.FONT_WEIGHT_LIGHT
   },
   bottomBar: {
     flexDirection: 'row',
@@ -40,5 +43,13 @@ export default StyleSheet.create({
   characterCount: {
     padding: 10,
     fontSize: theme.FONT_SIZE_SMALL
+  },
+  aboutUsWrapper: {
+    padding: 15,
+    alignItems: 'center',
+    backgroundColor: 'white'
+  },
+  aboutUs: {
+    fontWeight: theme.FONT_WEIGHT_BOLD
   }
 });

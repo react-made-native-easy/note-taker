@@ -9,6 +9,10 @@ export const headingText = {
 
 export const textInput = {
   padding: theme.TEXT_INPUT_PADDING,
-  backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
+  backgroundColor: 'white',
+  borderWidth: 1,
+  margin: 10,
+  borderColor: theme.BORDER_COLOR_LIGHT,
+  borderRadius: 2,
   alignSelf: 'stretch'
 };
