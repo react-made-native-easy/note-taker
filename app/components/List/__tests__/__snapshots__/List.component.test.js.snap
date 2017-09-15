@@ -20,7 +20,6 @@ exports[`List component should render correctly 1`] = `
   onScrollEndDrag={[Function]}
   onViewableItemsChanged={undefined}
   renderItem={[Function]}
-  renderScrollComponent={[Function]}
   scrollEventThrottle={50}
   stickyHeaderIndices={Array []}
   updateCellsBatchingPeriod={50}
