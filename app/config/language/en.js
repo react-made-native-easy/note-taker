@@ -9,4 +9,7 @@ export default {
   ABOUT_theCreators: 'About the Creators',
   ABOUT_theAppDesc: 'About the app',
   ABOUT_theCreatorsDesc: 'About the Creators',
+  NOTES_heading: 'Notes',
+  NOTES_title: 'Title',
+  NOTES_content: 'Content'
 };

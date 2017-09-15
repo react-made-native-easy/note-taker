@@ -9,4 +9,7 @@ export default {
   ABOUT_theCreators: 'रचनाकारों के बारे में',
   ABOUT_theAppDesc: 'एप के बारे में',
   ABOUT_theCreatorsDesc: 'रचनाकारों के बारे में',
+  NOTES_heading: 'नोट्स',
+  NOTES_title: 'शीर्षक',
+  NOTES_content: 'विस्तार'
 };
