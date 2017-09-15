@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {View, Text, TextInput} from 'react-native';
+import {View, Text, TextInput, KeyboardAvoidingView} from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './Home.component.style';
-import TextArea from '../TextArea/TextArea.component';
+import Notes from '../Notes/Notes.component';
 import Touchable from 'react-native-platform-touchable';
 import noop from 'lodash/noop';
 
@@ -12,8 +12,12 @@ import icoMoonConfig from '../../assets/selection.json';
 const Icon = createIconSetFromIcoMoon(icoMoonConfig);
 
 class Home extends Component {
+  addNote = () => {
+    const {saveNote, title, text} = this.props;
+    saveNote({title, text});
+  }
   render () {
-    const {setTitle, title, text, setText} = this.props;
+    const {setTitle, title, text, setText, notes} = this.props;
     return (
       <View style={styles.container}>
 
@@ -21,13 +25,15 @@ class Home extends Component {
         <TextInput style={styles.titleTextInput}
             onChangeText={setTitle} value={title} />
         <Text style={styles.textAreaTitle}> Please type your note below  <Icon name='notepad' size={15}/></Text>
-        <TextArea text={text} onTextChange={setText} style={styles.textArea}/>
-        <View style={styles.bottomBar}>
+        <TextInput style={styles.textArea} multiline = {true}
+          onChangeText={setText} value={text}/>
+        <KeyboardAvoidingView style={styles.bottomBar}>
           <View style={styles.bottomBarWrapper}>
-            <Text style={styles.saveBtn}>Save</Text>
+            <Text style={styles.saveBtn} onPress={this.addNote}>Save</Text>
             <Text style={styles.characterCount}>{text.length} characters</Text>
           </View>
-        </View>
+        </KeyboardAvoidingView>
+        <Notes data={notes} />
         <Touchable style={styles.aboutUsWrapper} onPress={this.props.onAboutPress}>
           <Text style={styles.aboutUs}>About Us</Text>
         </Touchable>
@@ -39,11 +45,14 @@ class Home extends Component {
 Home.defaultProps = {
   onAboutPress: noop
 };
+
 Home.propTypes = {
   setTitle: PropTypes.func,
   onAboutPress: PropTypes.func,
   setText: PropTypes.func,
   title: PropTypes.string,
+  saveNote: PropTypes.func,
+  notes: PropTypes.array,
   text: PropTypes.string
 };
 
