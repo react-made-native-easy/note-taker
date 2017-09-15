@@ -18,10 +18,13 @@ class Home extends Component {
     saveNote({title, text});
   }
   render () {
-    const {setTitle, title, text, setText, notes} = this.props;
+    const {setTitle, title, text, setText, notes, currentLanguage, toggleLanguage} = this.props;
     return (
       <View style={styles.container}>
         <Text style={styles.titleHeading}>{translate('HOME_noteTitle')}</Text>
+        <Touchable style={styles.changeLanguage} onPress={toggleLanguage}>
+          <Text style={styles.changeLanguageText}>{currentLanguage}</Text>
+        </Touchable>
         <TextInput style={styles.titleTextInput}
             onChangeText={setTitle} value={title} />
         <Text style={styles.textAreaTitle}>{translate('HOME_pleaseTypeYourNote')}  <Icon name='notepad' size={15}/></Text>

@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {View, Text} from 'react-native';
 import styles from './Notes.style.js';
+import translate from '../../utils/language.utils';
 import List from '../List/List.component';
 import Modal from 'react-native-modal-overlay';
 
@@ -22,11 +23,11 @@ class Notes extends Component {
     }
     return (
       <View style={styles.container}>
-        <Text style={styles.heading}>Notes: </Text>
+        <Text style={styles.heading}>{translate('NOTES_heading')}: </Text>
         <List onPress={this.showModal} headingKey='title' subHeadingKey='text' data={this.props.data}/>
         <Modal closeOnTouchOutside onClose={this.hideModal} visible={this.state.visible} >
-          <Text style={styles.heading}>Title: {this.state.selectedData.title} </Text>
-          <Text style={styles.heading}>Content: {this.state.selectedData.text}</Text>
+          <Text style={styles.heading}>{translate('NOTES_title')}: {this.state.selectedData.title} </Text>
+          <Text style={styles.heading}>{translate('NOTES_content')}: {this.state.selectedData.text}</Text>
         </Modal>
       </View>);
   }
