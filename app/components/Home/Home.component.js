@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {View, Text, TextInput} from 'react-native';
+import {View, Text, TextInput, KeyboardAvoidingView} from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './Home.component.style';
-import TextArea from '../TextArea/TextArea.component';
+import Notes from '../Notes/Notes.component';
 import Touchable from 'react-native-platform-touchable';
 import noop from 'lodash/noop';
 import translate from '../../utils/language.utils';
@@ -13,21 +13,27 @@ import icoMoonConfig from '../../assets/selection.json';
 const Icon = createIconSetFromIcoMoon(icoMoonConfig);
 
 class Home extends Component {
+  addNote = () => {
+    const {saveNote, title, text} = this.props;
+    saveNote({title, text});
+  }
   render () {
-    const {setTitle, title, text, setText} = this.props;
+    const {setTitle, title, text, setText, notes} = this.props;
     return (
       <View style={styles.container}>
         <Text style={styles.titleHeading}>{translate('HOME_noteTitle')}</Text>
         <TextInput style={styles.titleTextInput}
             onChangeText={setTitle} value={title} />
         <Text style={styles.textAreaTitle}>{translate('HOME_pleaseTypeYourNote')}  <Icon name='notepad' size={15}/></Text>
-        <TextArea text={text} onTextChange={setText} style={styles.textArea}/>
-        <View style={styles.bottomBar}>
+        <TextInput style={styles.textArea} multiline = {true}
+          onChangeText={setText} value={text}/>
+        <KeyboardAvoidingView style={styles.bottomBar}>
           <View style={styles.bottomBarWrapper}>
-            <Text style={styles.saveBtn}>{translate('HOME_save')}</Text>
+            <Text style={styles.saveBtn} onPress={this.addNote}>{translate('HOME_save')}</Text>
             <Text style={styles.characterCount}>{text.length} {translate('HOME_characters')}</Text>
           </View>
-        </View>
+        </KeyboardAvoidingView>
+        <Notes data={notes} />
         <Touchable style={styles.aboutUsWrapper} onPress={this.props.onAboutPress}>
           <Text style={styles.aboutUs}>{translate('ABOUT_us')}</Text>
         </Touchable>
@@ -39,15 +45,17 @@ class Home extends Component {
 Home.defaultProps = {
   onAboutPress: noop
 };
+
 Home.propTypes = {
   setTitle: PropTypes.func,
   onAboutPress: PropTypes.func,
   setText: PropTypes.func,
   toggleLanguage: PropTypes.func,
   title: PropTypes.string,
-  text: PropTypes.string,
+  saveNote: PropTypes.func,
+  notes: PropTypes.array,
   currentLanguage: PropTypes.string,
-
+  text: PropTypes.string
 };
 
 export default Home;
