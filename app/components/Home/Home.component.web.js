@@ -13,7 +13,7 @@ class Home extends Component {
     saveNote({title, text});
   }
   render () {
-    const {setTitle, title, text, setText, notes, currentLanguage, toggleLanguage} = this.props;
+    const {setTitle, title, text, setText, /* notes,*/ currentLanguage, toggleLanguage} = this.props;
     const flex = {display: 'flex'};
     return (
       <div style={styles.container}>
