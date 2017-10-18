@@ -18,10 +18,18 @@
     "test": "jest --verbose --coverage",
     "test:update": "jest --verbose --coverage --updateSnapshot",
     "test:watch": "jest --verbose --watch",
-    "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html"
+    "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
+    "seperator:web": "======================== WEB SCRIPTS ==========================================",
+    "start:web": "npm run compile:dev",
+    "build:web": "npm run compile:prod",
+    "seperator:helper": "========================WEB - HELPER SCRIPTS =======================================",
+    "prepare:dev": "cp index.html web/index.html && rexreplace 'web/' '' web/index.html",
+    "compile:dev": "npm run prepare:dev && NODE_ENV='development' webpack-dev-server --progress --config webpack.config.dev.js",
+    "compile:prod": "NODE_ENV='production' webpack -p --config webpack.config.prod.js"
   },
   "dependencies": {
     "react": "16.0.0-alpha.12",
+    "react-dom": "16.0.0-rc.3",
     "react-native": "0.48.2",
     "react-native-i18n": "^2.0.6",
     "react-native-modal-overlay": "^1.0.2",
@@ -36,13 +44,20 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "babel-jest": "20.0.3",
+    "babel-loader": "^7.1.2",
     "babel-preset-react-native": "2.1.0",
+    "babel-preset-stage-0": "^6.24.1",
     "eslint": "^3.14.1",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-react-native": "^2.3.2",
+    "friendly-errors-webpack-plugin": "^1.6.1",
     "husky": "^0.14.3",
     "jest": "20.0.4",
-    "react-test-renderer": "16.0.0-alpha.12"
+    "react-hot-loader": "3.0.0-beta.7",
+    "react-test-renderer": "16.0.0-alpha.12",
+    "rexreplace": "^2.5.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
   },
   "jest": {
     "preset": "react-native",

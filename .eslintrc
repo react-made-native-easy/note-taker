@@ -61,6 +61,7 @@
     "no-console": 2
   },
   "globals": {
+    "__dirname":false,
     "GLOBAL": false,
     "global": false,
     "it": false,

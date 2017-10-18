@@ -3,7 +3,7 @@ import {View, Text, TextInput, KeyboardAvoidingView} from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './Home.component.style';
 import Notes from '../Notes/Notes.component';
-import Touchable from 'react-native-platform-touchable';
+import Touchable from '../Touchable/Touchable.component';
 import noop from 'lodash/noop';
 import translate from '../../utils/language.utils';
 

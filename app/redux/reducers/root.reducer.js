@@ -12,7 +12,7 @@ const nav = (state, action) => (
 export default combineReducers({
   test,
   content,
-  nav,
+  // nav,
   notes,
   userPreferences
 });
