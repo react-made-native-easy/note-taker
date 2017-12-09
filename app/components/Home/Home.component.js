@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {View, Text, TextInput, KeyboardAvoidingView} from 'react-native';
 import PropTypes from 'prop-types';
-import styles from './Home.component.style';
-import Notes from '../Notes/Notes.component';
+import styles from './Home.component.style.js';
+import Notes from '../Notes/Notes.component.js';
 import Touchable from 'react-native-platform-touchable';
 import noop from 'lodash/noop';
-import translate from '../../utils/language.utils';
+import translate from '../../utils/language.utils.js';
 
 // Icon Usage
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
@@ -20,10 +20,13 @@ class Home extends Component {
     }
   }
   render () {
-    const {setTitle, title, text, setText, notes} = this.props;
+    const {setTitle, title, text, setText, notes, currentLanguage, toggleLanguage} = this.props;
     return (
       <View style={styles.container}>
         <Text style={styles.titleHeading}>{translate('HOME_noteTitle')}</Text>
+        <Touchable style={styles.changeLanguage} onPress={toggleLanguage}>
+          <Text style={styles.changeLanguageText}>{currentLanguage}</Text>
+        </Touchable>
         <TextInput style={styles.titleTextInput}
             onChangeText={setTitle} value={title} />
         <Text style={styles.textAreaTitle}>{translate('HOME_pleaseTypeYourNote')}  <Icon name='notepad' size={15}/></Text>
